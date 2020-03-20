@@ -1,0 +1,42 @@
+:root {
+  /* spacing */
+  --tight: 10px;
+  --base: 20px;
+  --loose: 40px;
+
+  /* sizes */
+  --small: 10px;
+  --medium: 20px;
+  --large: 30px;
+  --xlarge: 40px;
+
+  /* colors */
+  --primary: #ffffff;
+  --secondary: #333033;
+
+  background: var(--primary);
+  color: var(--secondary);
+}
+
+/* swap on dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #333033;
+    --secondary: #ffffff;
+  }
+}
+
+body * {
+  font-family: dm;
+  margin: 0;
+}
+
+ul, li {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
