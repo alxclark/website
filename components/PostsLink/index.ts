@@ -1,0 +1,1 @@
+export {PostsLink} from './PostsLink';

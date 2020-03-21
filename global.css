@@ -13,17 +13,31 @@
   /* colors */
   --primary: #ffffff;
   --secondary: #333033;
+  --yellow: #ffc937;
+  --blue: #78cdf8;
 
   background: var(--primary);
   color: var(--secondary);
 }
 
 /* swap on dark mode */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --primary: #333033;
     --secondary: #ffffff;
   }
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
 }
 
 body * {
@@ -31,7 +45,8 @@ body * {
   margin: 0;
 }
 
-ul, li {
+ul,
+li {
   margin: 0;
   list-style-type: none;
   padding: 0;

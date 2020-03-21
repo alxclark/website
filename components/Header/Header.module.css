@@ -2,4 +2,6 @@
   font-size: var(--xlarge);
   text-align: center;
   font-style: italic;
+  color: var(--primary);
+  margin-bottom: var(--loose);
 }

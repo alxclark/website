@@ -1,0 +1,35 @@
+.InlineStack {
+  display: grid;
+  grid-gap: var(--large);
+  grid-auto-columns: auto;
+  grid-auto-flow: column;
+  justify-content: start;
+}
+
+.tight {
+  grid-gap: var(--tight);
+}
+
+.base {
+  grid-gap: var(--base);
+}
+
+.loose {
+  grid-gap: var(--loose);
+}
+
+.leading {
+  justify-content: start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.trailing {
+  justify-content: end;
+}
+
+.apart {
+  justify-content: space-between;
+}

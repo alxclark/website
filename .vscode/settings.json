@@ -8,9 +8,6 @@
     ".dev": true,
     ".shadowenv.d": true
   },
-  "files.associations": {
-    "**/*.css": "postcss"
-  },
   "search.exclude": {
     "**/node_modules": true,
     "**/build": true,
@@ -35,8 +32,5 @@
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  },
-  "emmet.includeLanguages": {
-    "postcss": "css"
-  },
+  }
 }

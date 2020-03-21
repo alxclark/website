@@ -1,0 +1,11 @@
+.emoji {
+  font-size: var(--large);
+  margin-top: 4px;
+}
+
+.text {
+  color: var(--yellow);
+  font-style: italic;
+  text-decoration: underline;
+  font-size: var(--large);
+}

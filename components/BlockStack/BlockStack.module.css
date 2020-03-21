@@ -1,0 +1,27 @@
+.BlockStack {
+  display: grid;
+}
+
+.base {
+  grid-row-gap: var(--base);
+}
+
+.tight {
+  grid-row-gap: var(--tight);
+}
+
+.loose {
+  grid-row-gap: var(--loose);
+}
+
+.leading {
+  justify-items: start;
+}
+
+.center {
+  justify-items: center;
+}
+
+.trailing {
+  justify-items: end;
+}

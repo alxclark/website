@@ -1,18 +1,20 @@
 import NextLink, {LinkProps} from 'next/link';
 
 import styles from './Link.module.css';
+import {CSSProperties} from 'react';
 
 export interface Props extends LinkProps {
   children: React.ReactNode;
   external?: boolean;
+  style?: CSSProperties;
 }
 
 export function Link(props: Props) {
   if (props.external) {
     if (typeof props.href === 'string') {
       return (
-        <a className={styles.Link} href={props.href}>
-          {props.children}
+        <a href={props.href} style={props.style}>
+          <span className={styles.Link}>{props.children}</span>
         </a>
       );
     }
@@ -20,7 +22,9 @@ export function Link(props: Props) {
   }
   return (
     <NextLink {...props}>
-      <a className={styles.Link}>{props.children}</a>
+      <a>
+        <span className={styles.Link}>{props.children}</span>
+      </a>
     </NextLink>
   );
 }

@@ -2,16 +2,16 @@ import {AppProps} from 'next/app';
 
 import '../dank-mono.css';
 import '../global.css';
-import {Header, Footer} from '../components';
+import {Header, Footer, Layout} from '../components';
 
 export default function App({Component, pageProps}: AppProps) {
   return (
-    <div>
+    <Layout>
       <Header />
       <main>
         <Component {...pageProps} />
       </main>
       <Footer />
-    </div>
+    </Layout>
   );
 }
