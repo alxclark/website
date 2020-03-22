@@ -8,14 +8,21 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.5.7",
+    "@next/mdx": "^9.3.1",
     "classnames": "^2.2.6",
+    "fs-extra": "^9.0.0",
+    "gray-matter": "^4.0.2",
     "next": "9.3.0",
     "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "react-dom": "16.13.0",
+    "stringify-object": "^3.3.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.2.0",
     "@types/classnames": "^2.2.10",
+    "@types/fs-extra": "^8.1.0",
+    "@types/mdx-js__react": "^1.5.1",
     "@types/node": "^13.9.0",
     "@types/react": "^16.9.23",
     "eslint": "^6.8.0",

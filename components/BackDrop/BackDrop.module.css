@@ -1,11 +1,39 @@
 .BackDrop {
-  background: var(--secondary);
-  width: 600px;
-  height: 600px;
+  background: var(--subdued);
+  width: 520px;
+  height: 520px;
   border-radius: 100%;
   position: absolute;
-  top: 0;
-  right: 50%;
-  transform: translate(50%, -50%);
+  top: 75px;
+  left: 55%;
   z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.BackDrop svg {
+  transition: 0.3s ease;
+}
+
+.right {
+  left: 55%;
+}
+
+.right svg {
+  transform: translateX(-20%);
+}
+
+.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.center svg {
+  left: 50%;
+  transform: translateX(0%);
+}
+
+.block {
+  height: 520px;
 }

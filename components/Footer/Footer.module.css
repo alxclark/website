@@ -6,3 +6,17 @@
 .full {
   width: 100%;
 }
+
+.Footer svg {
+  height: var(--xlarge);
+}
+
+.copyright {
+  color: var(--subdued-dark);
+  font-family: dm;
+}
+
+.copyrightIcon {
+  color: var(--subdued-dark);
+  margin-top: 2px;
+}

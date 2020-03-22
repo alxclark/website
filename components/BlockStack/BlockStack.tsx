@@ -2,9 +2,9 @@ import classNames from 'classnames';
 
 import styles from './BlockStack.module.css';
 
-type Alignment = 'leading' | 'center' | 'trailing';
+type Alignment = 'leading' | 'center' | 'trailing' | 'unset';
 
-type Spacing = 'tight' | 'loose';
+type Spacing = 'tight' | 'base' | 'loose';
 
 export interface Props {
   alignment?: Alignment;
@@ -13,8 +13,8 @@ export interface Props {
 }
 
 export function BlockStack({
-  alignment = 'leading',
-  spacing = 'tight',
+  alignment = 'unset',
+  spacing = 'base',
   children,
 }: Props) {
   const className = classNames(styles.BlockStack, {

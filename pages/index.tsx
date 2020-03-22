@@ -1,6 +1,10 @@
 import Head from 'next/head';
+import {GetStaticProps} from 'next';
 import {BackDrop} from '../components/BackDrop';
-import {MeLink, PostsLink} from '../components';
+import * as fse from 'fs-extra';
+import matter from 'gray-matter';
+import {Post} from '../types';
+import {PostThumbnail} from '../components';
 import {BlockStack} from '../components/BlockStack';
 
 const Meta = () => (
@@ -10,19 +14,55 @@ const Meta = () => (
   </Head>
 );
 
-const Home = () => {
+interface Props {
+  posts: Post[];
+}
+
+export default function Home({posts}: Props) {
   return (
     <>
       <Meta />
       <div className="container">
-        <BackDrop />
-        <BlockStack alignment="center" spacing="loose">
-          <MeLink />
-          <PostsLink />
-        </BlockStack>
+        <BackDrop poster={posts[0].poster} />
+        <ul>
+          <BlockStack spacing="loose">
+            {posts.map((post) => (
+              <PostThumbnail post={post} />
+            ))}
+          </BlockStack>
+        </ul>
       </div>
     </>
   );
+}
+
+export const getStaticProps: GetStaticProps = async (_context) => {
+  return {
+    props: {
+      posts: await getPosts(),
+    },
+  };
 };
 
-export default Home;
+async function getPosts() {
+  try {
+    const posts: Post[] = [];
+    const filenames = await fse.readdir('./pages/posts');
+
+    for (const filename of filenames) {
+      const path = `./pages/posts/${filename}`;
+      const content = await fse.readFile(path, 'UTF8');
+      const md = matter(content);
+      posts.push({
+        ...md.data,
+        slug: filename
+          .split('.')
+          .slice(0, -1)
+          .join('.'),
+      } as Post);
+    }
+    return posts;
+  } catch (error) {
+    throw new Error('Failed reading /pages/posts directory');
+  }
+}

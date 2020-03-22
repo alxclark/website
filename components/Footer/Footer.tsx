@@ -6,56 +6,48 @@ import {
   EmailIcon,
 } from '../../icons';
 
-import {Link} from '..';
 import {InlineStack} from '../InlineStack';
-import {BlockStack} from '../BlockStack';
 import styles from './Footer.module.css';
+import {BlockStack} from '../BlockStack';
 
 export function Footer() {
   return (
     <footer className={styles.Footer}>
-      <ul>
-        <BlockStack spacing="loose">
-          <li>
-            <Link href="https://twitter.com/alxclrk" external>
-              <InlineStack spacing="loose">
+      <BlockStack>
+        <ul>
+          <InlineStack spacing="tight" alignment="apart">
+            <li>
+              <a href="https://twitter.com/alxclrk">
                 <TwitterIcon />
-                alxclrk
-              </InlineStack>
-            </Link>
-          </li>
-          <li>
-            <Link href="https://github.com/alxclark" external>
-              <InlineStack spacing="loose">
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/alxclark">
                 <GithubIcon />
-                alxclark
-              </InlineStack>
-            </Link>
-          </li>
-          <li>
-            <Link href="https://instagram.com/alexclrk" external>
-              <InlineStack spacing="loose">
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/alexclrk">
                 <InstagramIcon />
-                alexclrk
-              </InlineStack>
-            </Link>
-          </li>
-          <li className={styles.full}>
-            <InlineStack spacing="loose" alignment="apart">
-              <Link href="https://linkedon.com" external>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedon.com">
                 <LinkedInIcon />
-              </Link>
-              <EmailIcon />
-              <EmailIcon />
-            </InlineStack>
-          </li>
-        </BlockStack>
-      </ul>
-      <ul>
-        <li />
-        <li />
-        <li />
-      </ul>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedon.com">
+                <EmailIcon />
+              </a>
+            </li>
+          </InlineStack>
+        </ul>
+        <InlineStack alignment="center">
+          <div className={styles.copyrightIcon}>©</div>
+          <p className={styles.copyright}>alex clark 2020</p>
+        </InlineStack>
+      </BlockStack>
     </footer>
   );
 }
