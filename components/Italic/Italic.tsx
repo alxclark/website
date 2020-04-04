@@ -9,7 +9,6 @@ export interface Props {
 }
 
 export function Italic({children, post}: Props) {
-  console.log({post});
   return (
     <i style={post ? {color: `#${post.color}`} : {}} className={styles.Italic}>
       {children}

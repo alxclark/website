@@ -4,16 +4,24 @@ import {Poster1, Poster0} from '../../icons';
 import {Post} from '../../types';
 
 export interface Props {
-  poster: Post['poster'];
+  posts: Post[];
   alignment?: 'center' | 'right';
 }
 
-export function BackDrop({poster, alignment = 'right'}: Props) {
+export function BackDrop({posts, alignment = 'right'}: Props) {
   return (
     <>
       <div className={classNames(styles.BackDrop, {[styles[alignment]]: true})}>
-        {poster === 'Poster1' && <Poster1 />}
-        {poster === 'Poster0' && <Poster0 />}
+        {posts.slice(0, 3).map((post) => {
+          switch (post.poster) {
+            case 'Poster0':
+              return <Poster0 key={post.slug} />;
+            case 'Poster1':
+              return <Poster1 key={post.slug} />;
+            default:
+              return null;
+          }
+        })}
       </div>
       {alignment && alignment === 'center' && <div className={styles.block} />}
     </>

@@ -1,7 +1,9 @@
 .Layout {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  grid-row-gap: var(--tight);
+  grid-row-gap: var(--loose);
   padding: var(--base);
   min-height: 100vh;
+  max-width: 800px;
+  margin: auto;
 }

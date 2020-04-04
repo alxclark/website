@@ -1,3 +1,7 @@
+// Post
+export {default as LikeIcon} from './like.svg';
+
+// Contact
 export {default as GithubIcon} from './github.svg';
 export {default as InstagramIcon} from './instagram.svg';
 export {default as LinkedInIcon} from './linkedin.svg';

@@ -15,7 +15,7 @@ export function Footer() {
     <footer className={styles.Footer}>
       <BlockStack>
         <ul>
-          <InlineStack spacing="tight" alignment="apart">
+          <InlineStack spacing="tight" alignment="leading">
             <li>
               <a href="https://twitter.com/alxclrk">
                 <TwitterIcon />

@@ -23,11 +23,11 @@ export default function Home({posts}: Props) {
     <>
       <Meta />
       <div className="container">
-        <BackDrop poster={posts[0].poster} />
+        <BackDrop posts={posts} />
         <ul>
           <BlockStack spacing="loose">
             {posts.map((post) => (
-              <PostThumbnail post={post} />
+              <PostThumbnail post={post} key={post.slug} />
             ))}
           </BlockStack>
         </ul>

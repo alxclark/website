@@ -1,30 +1,22 @@
-import NextLink, {LinkProps} from 'next/link';
+import React from 'react';
 
 import styles from './Link.module.css';
-import {CSSProperties} from 'react';
+import {Post} from '../../types';
 
-export interface Props extends LinkProps {
+export interface Props {
   children: React.ReactNode;
-  external?: boolean;
-  style?: CSSProperties;
+  post?: Post;
+  href?: string;
 }
 
-export function Link(props: Props) {
-  if (props.external) {
-    if (typeof props.href === 'string') {
-      return (
-        <a href={props.href} style={props.style}>
-          <span className={styles.Link}>{props.children}</span>
-        </a>
-      );
-    }
-    throw new Error('A link cannot be external and have an object href');
-  }
+export function Link({children, post, href}: Props) {
   return (
-    <NextLink {...props}>
-      <a>
-        <span className={styles.Link}>{props.children}</span>
-      </a>
-    </NextLink>
+    <a
+      href={href}
+      style={post ? {color: `#${post.color}`} : {}}
+      className={styles.Link}
+    >
+      {children}
+    </a>
   );
 }

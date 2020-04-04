@@ -1,0 +1,7 @@
+.FixedContainer {
+  position: fixed;
+  right: calc((100vw - 800px) / 4);
+  transform: translateX(32%);
+  width: 3rem;
+  padding: 0 0.5rem;
+}

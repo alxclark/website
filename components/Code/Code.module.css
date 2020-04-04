@@ -1,0 +1,7 @@
+.Code {
+  font-family: dm;
+  padding: 3px;
+  font-style: italic;
+  background: var(--subdued);
+  border-radius: 3px;
+}

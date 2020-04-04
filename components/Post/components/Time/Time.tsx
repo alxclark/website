@@ -1,6 +1,8 @@
 import React from 'react';
 import {Post} from '../../../../types';
 
+import styles from './Time.module.css';
+
 export interface Props {
   post: Post;
 }
@@ -17,7 +19,7 @@ export function Time({post}: Props) {
   }
 
   return (
-    <span>
+    <span className={styles.Time}>
       {post.time} min read <TimeEmoji />
     </span>
   );
