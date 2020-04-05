@@ -12,11 +12,12 @@
 }
 
 .copyright {
-  color: var(--subdued-dark);
+  color: var(--secondary);
   font-family: dm;
+  font-size: var(--small);
 }
 
 .copyrightIcon {
-  color: var(--subdued-dark);
-  margin-top: 7px;
+  color: var(--secondary);
+  font-size: var(--small);
 }

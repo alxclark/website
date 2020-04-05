@@ -15,8 +15,6 @@
   --secondary: #333033;
   --subdued: #e5e5e5;
   --subdued-dark: #c6c3c3;
-  --yellow: #ffc937;
-  --blue: #78cdf8;
 
   background: var(--primary);
   color: var(--secondary);

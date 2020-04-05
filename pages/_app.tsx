@@ -18,6 +18,7 @@ import {BackDrop} from '../components/BackDrop';
 import {BlockStack} from '../components/BlockStack';
 import {Code} from '../components/Code';
 import {List} from '../components/List';
+import Head from 'next/head';
 
 interface WrapperProps {
   frontMatter: Post;
@@ -71,6 +72,10 @@ function PostList({children}: {children: React.ReactNode}) {
 const Wrapper = ({children, frontMatter}: WrapperProps) => {
   return (
     <div>
+      <Head>
+        <title>{frontMatter.title}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <h1 style={{visibility: 'hidden', height: 0}}>{frontMatter.title}</h1>
       <BlockStack>
         <BackDrop posts={[frontMatter]} alignment="center" />

@@ -5,3 +5,7 @@
 .Link {
   text-decoration: none;
 }
+
+.isHovered {
+  color: #fab665;
+}

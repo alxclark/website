@@ -12,6 +12,7 @@ export interface Props {
   alignment?: Alignment;
   distribution?: Distribution;
   children: React.ReactNode;
+  as?: 'div' | 'ul';
 }
 
 export function InlineStack({
@@ -19,6 +20,7 @@ export function InlineStack({
   alignment = 'leading',
   distribution,
   children,
+  as: Element = 'div',
 }: Props) {
   const className = classNames(styles.InlineStack, {
     [styles[spacing]]: true,
@@ -30,9 +32,9 @@ export function InlineStack({
     : undefined;
 
   return (
-    <div className={className} style={style}>
+    <Element className={className} style={style}>
       {children}
-    </div>
+    </Element>
   );
 }
 

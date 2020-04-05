@@ -10,16 +10,18 @@ export interface Props {
   alignment?: Alignment;
   spacing?: Spacing;
   children: React.ReactNode;
+  as?: 'div' | 'ul';
 }
 
 export function BlockStack({
   alignment = 'unset',
   spacing = 'base',
   children,
+  as: Element = 'div',
 }: Props) {
   const className = classNames(styles.BlockStack, {
     [styles[alignment]]: true,
     [styles[spacing]]: true,
   });
-  return <div className={className}>{children}</div>;
+  return <Element className={className}>{children}</Element>;
 }

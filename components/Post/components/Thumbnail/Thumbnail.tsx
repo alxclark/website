@@ -4,6 +4,7 @@ import {Post} from '../../../../types';
 import {Time} from '../Time';
 
 import styles from './Thumbnail.module.css';
+import {useState} from 'react';
 
 export interface Props {
   post: Post;
@@ -11,10 +12,22 @@ export interface Props {
 }
 
 export function Thumbnail({post, onHover}: Props) {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <li>
       <Link href={`posts/${post.slug}`}>
-        <a className={styles.Link} onMouseEnter={() => onHover?.(post)}>
+        <a
+          className={styles.Link}
+          onMouseEnter={() => {
+            onHover?.(post);
+            setHovered(true);
+          }}
+          onMouseOut={() => {
+            setHovered(false);
+          }}
+          style={hovered ? {color: `#${post.color}`} : {}}
+        >
           <h2>{post.title}</h2>
         </a>
       </Link>
