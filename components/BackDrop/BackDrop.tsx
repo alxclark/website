@@ -1,7 +1,8 @@
 import classNames from 'classnames';
-import styles from './BackDrop.module.css';
-import {Poster1, Poster0} from '../../icons';
+
 import {Post} from '../../types';
+
+import styles from './BackDrop.module.css';
 
 export interface Props {
   posts: Post[];
@@ -12,16 +13,13 @@ export function BackDrop({posts, alignment = 'right'}: Props) {
   return (
     <>
       <div className={classNames(styles.BackDrop, {[styles[alignment]]: true})}>
-        {posts.slice(0, 3).map((post) => {
-          switch (post.poster) {
-            case 'Poster0':
-              return <Poster0 key={post.slug} />;
-            case 'Poster1':
-              return <Poster1 key={post.slug} />;
-            default:
-              return null;
-          }
-        })}
+        {posts.slice(0, 3).map((post) => (
+          <picture key={post.slug}>
+            <source type="image/webp" srcSet={`/${post.poster}.webp`} />
+            <source type="image/png" srcSet={`/${post.poster}.png`} />
+            <img src={`/${post.poster}.png`} alt={post.title} />
+          </picture>
+        ))}
       </div>
       {alignment && alignment === 'center' && <div className={styles.block} />}
     </>

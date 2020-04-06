@@ -1,8 +1,10 @@
 import {AppProps} from 'next/app';
-
-import '../dank-mono.css';
+// import '../dank-mono.css';
 import '../global.css';
 import React from 'react';
+import Head from 'next/head';
+import {MDXProvider} from '@mdx-js/react';
+
 import {
   Header,
   Footer,
@@ -12,13 +14,11 @@ import {
   CodeBlock,
   Link,
 } from '../components';
-import {MDXProvider} from '@mdx-js/react';
 import {Post} from '../types';
 import {BackDrop} from '../components/BackDrop';
 import {BlockStack} from '../components/BlockStack';
 import {Code} from '../components/Code';
 import {List} from '../components/List';
-import Head from 'next/head';
 
 interface WrapperProps {
   frontMatter: Post;

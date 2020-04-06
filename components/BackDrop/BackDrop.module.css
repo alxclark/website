@@ -12,9 +12,12 @@
   align-items: center;
 }
 
-.BackDrop svg {
+.BackDrop picture img {
   position: absolute;
   transition: 0.3s ease;
+  width: 220px;
+  transform: rotate(18deg);
+  box-shadow: 6px 6px 10px #0000005c;
 }
 
 .right {
@@ -23,18 +26,20 @@
   transform: translateY(-50%);
 }
 
-.right svg {
-  transform: translateX(-20%);
+.right picture img {
+  transform: translate(-70%, -40%) rotate(18deg);
   z-index: 3;
+  top: 50%;
+  left: 50%;
 }
 
-.right svg:nth-child(1) {
-  transform: translate(0%, -5%);
+.right picture:nth-child(1) img {
+  transform:  translate(-50%, -50%) rotate(18deg);
   z-index: 2;
 }
 
-.right svg:nth-child(2) {
-  transform: translate(15%, -7%);
+.right picture:nth-child(2) img {
+  transform:  translate(-30%, -60%) rotate(18deg);
   z-index: 1;
 }
 
@@ -43,7 +48,7 @@
   transform: translateX(-50%);
 }
 
-.center svg {
+.center picture img {
   left: 50%;
   transform: translateX(-50%);
 }

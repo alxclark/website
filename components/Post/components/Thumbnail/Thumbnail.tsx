@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import {Post} from '../../../../types';
+import {useState} from 'react';
 
+import {Post} from '../../../../types';
 import {Time} from '../Time';
 
 import styles from './Thumbnail.module.css';
-import {useState} from 'react';
 
 export interface Props {
   post: Post;
@@ -19,11 +19,18 @@ export function Thumbnail({post, onHover}: Props) {
       <Link href={`posts/${post.slug}`}>
         <a
           className={styles.Link}
+          onFocus={() => {
+            onHover?.(post);
+            setHovered(true);
+          }}
           onMouseEnter={() => {
             onHover?.(post);
             setHovered(true);
           }}
           onMouseOut={() => {
+            setHovered(false);
+          }}
+          onBlur={() => {
             setHovered(false);
           }}
           style={hovered ? {color: `#${post.color}`} : {}}

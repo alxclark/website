@@ -3,7 +3,7 @@ export interface Post {
   title: string;
   subtitle: string;
   time: number;
-  poster: 'Poster1' | 'Poster0';
+  poster: string;
   slug: string;
   date: string;
   color: string;

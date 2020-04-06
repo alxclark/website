@@ -5,10 +5,10 @@ import {
   LinkedInIcon,
   EmailIcon,
 } from '../../icons';
-
 import {InlineStack} from '../InlineStack';
-import styles from './Footer.module.css';
 import {BlockStack} from '../BlockStack';
+
+import styles from './Footer.module.css';
 
 export function Footer() {
   return (
