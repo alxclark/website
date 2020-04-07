@@ -14,7 +14,7 @@
     "classnames": "^2.2.6",
     "fs-extra": "^9.0.0",
     "gray-matter": "^4.0.2",
-    "next": "9.3.0",
+    "next": "9.3.2",
     "preact": "^10.3.4",
     "preact-render-to-string": "^5.1.4",
     "prism-react-renderer": "^1.0.2",
