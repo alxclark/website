@@ -15,8 +15,11 @@
     "gray-matter": "^4.0.2",
     "next": "9.3.0",
     "prism-react-renderer": "^1.0.2",
-    "react": "16.13.0",
-    "react-dom": "16.13.0",
+    "preact": "^10.3.4",
+    "preact-render-to-string": "^5.1.4",
+    "react": "github:preact-compat/react#1.0.0",
+    "react-dom": "github:preact-compat/react-dom#1.0.0",
+    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.0.1",
     "stringify-object": "^3.3.0"
   },
   "devDependencies": {
