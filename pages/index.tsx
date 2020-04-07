@@ -1,11 +1,10 @@
 import Head from 'next/head';
 import {GetStaticProps} from 'next';
-import {BackDrop} from '../components/BackDrop';
 import * as fse from 'fs-extra';
 import matter from 'gray-matter';
+
+import {BackDrop, BlockStack, PostThumbnail} from '../components';
 import {Post} from '../types';
-import {PostThumbnail} from '../components';
-import {BlockStack} from '../components/BlockStack';
 
 const Meta = () => (
   <Head>
@@ -37,6 +36,7 @@ export default function Home({posts}: Props) {
 export const getStaticProps: GetStaticProps = async (_context) => {
   return {
     props: {
+      page: 'home',
       posts: await getPosts(),
     },
   };

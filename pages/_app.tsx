@@ -13,12 +13,12 @@ import {
   Italic,
   CodeBlock,
   Link,
+  BackDrop,
+  BlockStack,
+  Code,
+  List,
 } from '../components';
 import {Post} from '../types';
-import {BackDrop} from '../components/BackDrop';
-import {BlockStack} from '../components/BlockStack';
-import {Code} from '../components/Code';
-import {List} from '../components/List';
 
 interface WrapperProps {
   frontMatter: Post;

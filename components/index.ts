@@ -6,3 +6,7 @@ export {Italic} from './Italic';
 export {PostThumbnail, PostTime} from './Post';
 export {CodeBlock} from './CodeBlock';
 export {FixedContainer} from './FixedContainer';
+export {BackDrop} from './BackDrop';
+export {BlockStack} from './BlockStack';
+export {List} from './List';
+export {Code} from './Code';
