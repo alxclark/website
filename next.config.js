@@ -2,6 +2,11 @@ const path = require('path');
 
 // @see https://github.com/zeit/next.js/blob/canary/packages/next-mdx/index.js
 // Enhancing next-mdx to enable custom loaders
+
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
 const nextMDX = (pluginOptions = {}) => (nextConfig = {}) => {
   const extension = pluginOptions.extension || /\.mdx$/;
 
@@ -66,26 +71,28 @@ const nextMDX = (pluginOptions = {}) => (nextConfig = {}) => {
 
 const withMDX = nextMDX({extension: /\.(md|mdx)$/});
 
-module.exports = withMDX({
-  pageExtensions: ['mdx', 'tsx'],
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: [
-        {
-          loader: '@svgr/webpack',
-          options: {
-            svgoConfig: {
-              plugins: [
-                {
-                  removeViewBox: false,
-                },
-              ],
+module.exports = withBundleAnalyzer(
+  withMDX({
+    pageExtensions: ['mdx', 'tsx'],
+    webpack(config) {
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              svgoConfig: {
+                plugins: [
+                  {
+                    removeViewBox: false,
+                  },
+                ],
+              },
             },
           },
-        },
-      ],
-    });
-    return config;
-  },
-});
+        ],
+      });
+      return config;
+    },
+  }),
+);
